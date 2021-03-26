@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello_react</title>
+</head>
+
+<body>
+    <div id="test"></div>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <script type="text/babel">
+        class Weather extends React.Component {
+            // constructor(props) {
+            //     super(props)
+
+            //     // this.changeWeather = this.changeWeather.bind(this)//bind能生成新的函数,或者改this指向
+            // }
+            state = { isHot: false }
+
+
+            // 页面更新需要调用render(),该方法就是从状态里读值,然后渲染到页面上,监听state,状态一改变就刷新页面
+            //render是实例对象(类似W1)调用的,所以this指向该对象
+            render() {
+
+                console.log(this);
+                return <h2 onClick={this.changeWeather}>今天天气很{this.state.isHot ? '炎热' : '凉爽'}</h2>
+            }
+            //本来是在原型上,现在放在实例自身上了,但是this还是有问题
+            //以后自定义方法都要写成赋值语句加箭头函数方法,这样this就可用
+            //es6中类里面写箭头函数只能这样写.
+            changeWeather = () => {
+                //最屌箭头函数上场,本身没有this,硬用的话指向外侧this.
+                //changeWeather放在Weather的原型对象上,供实例使用
+                //由于自定义方法作为onClick的回调,所以不是通过实例调用,而是直接引用
+                //类里面默认开严格模式
+                const isHot = this.state.isHot
+                //状态不能直接更改,要借助一个内置api
+                // this.state.isHot = !isHot//错误写法
+                //状态必须通过原型对象的setState进行更新 
+                this.setState({ isHot: !isHot })
+
+                console.log(this.state.isHot);
+            }
+        }
+        //渲染组件到页面
+        //写了组件标签,react就实例化了一个对象
+        ReactDOM.render(<Weather />, document.getElementById('test'))
+        // const title = document.getElementById('title')
+        // title.addEventListener('click', () => {
+        //     console.log('标题被点击了');
+        // })
+        // function demo() {
+        //     console.log('标题被点击了');
+
+        // }
+    </script>
+</body>
+
+</html>

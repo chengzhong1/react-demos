@@ -1,0 +1,1 @@
+add=(d,o)=>d+o,console.log(add(2,3));

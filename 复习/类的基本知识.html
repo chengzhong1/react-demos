@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        总结:
+        1,类中的构造器不是必须要写,要对实例进行一定初始化操作的时候才写.
+        2,如果A类继承了B类,且A类写了构造器,那么必须调用super(arg,arg)
+        3,类中所定义的方法都是放在类的原型对象上,供实例使用
+
+
+
+
+
+
+
+        */
+        class Person {
+            //类里面不能随便写东西,可以写构造函数,但不能写逻辑语句,写方法,写赋值语句
+            // 构造器方法
+            //在类中声明方法的时候，千万不要给该方法加上function关键字
+            //方法之间不要用逗号分隔，否则会报错
+            constructor(name) {
+                this.name = name
+                //构造器中的this是指类的实例对象
+            }
+            speak() {
+                //speak方法放在类的原型对象上
+                //通过person实例调用的话,this就是person实例
+                console.log(`我叫${this.name}`);
+            }
+            static leg = 2;
+        }
+        class Student extends Person {
+            constructor(name, grade) {
+                super(name)
+                this.grade = grade;
+            }
+        }
+        const p1 = new Person('tom');
+        const s1 = new Student('jj', '高一')
+        console.log(s1);
+        console.log(p1);
+        console.log(Person.leg);
+        p1.speak();
+    </script>
+</body>
+
+</html>

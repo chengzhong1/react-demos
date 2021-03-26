@@ -1,0 +1,14 @@
+"filename", "language", "JavaScript", "CSS", "HTML", "Vue", "JSON", "comment", "blank", "total"
+"d:\前端相关\我爱前端\reactdemo\webpack探究\06-配置分离\build\built.js", "JavaScript", 128, 0, 0, 0, 0, 62, 40, 230
+"d:\前端相关\我爱前端\reactdemo\webpack探究\06-配置分离\build\index.html", "HTML", 0, 0, 13, 0, 0, 0, 3, 16
+"d:\前端相关\我爱前端\reactdemo\webpack探究\06-配置分离\index.html", "HTML", 0, 0, 13, 0, 0, 0, 3, 16
+"d:\前端相关\我爱前端\reactdemo\webpack探究\06-配置分离\package-lock.json", "JSON", 0, 0, 0, 0, 6084, 0, 1, 6085
+"d:\前端相关\我爱前端\reactdemo\webpack探究\06-配置分离\package.json", "JSON", 0, 0, 0, 0, 27, 0, 0, 27
+"d:\前端相关\我爱前端\reactdemo\webpack探究\06-配置分离\setjs\base.config.js", "JavaScript", 41, 0, 0, 0, 0, 12, 1, 54
+"d:\前端相关\我爱前端\reactdemo\webpack探究\06-配置分离\setjs\dev.config.js", "JavaScript", 11, 0, 0, 0, 0, 2, 3, 16
+"d:\前端相关\我爱前端\reactdemo\webpack探究\06-配置分离\setjs\prod.config.js", "JavaScript", 6, 0, 0, 0, 0, 1, 4, 11
+"d:\前端相关\我爱前端\reactdemo\webpack探究\06-配置分离\src\index.css", "CSS", 0, 6, 0, 0, 0, 0, 0, 6
+"d:\前端相关\我爱前端\reactdemo\webpack探究\06-配置分离\src\index.js", "JavaScript", 9, 0, 0, 0, 0, 2, 1, 12
+"d:\前端相关\我爱前端\reactdemo\webpack探究\06-配置分离\src\vue\cpn.vue", "Vue", 0, 0, 0, 21, 0, 0, 1, 22
+"d:\前端相关\我爱前端\reactdemo\webpack探究\06-配置分离\webpack.config.js", "JavaScript", 46, 0, 0, 0, 0, 7, 1, 54
+"Total", "-", 241, 6, 26, 21, 6111, 86, 58, 6549

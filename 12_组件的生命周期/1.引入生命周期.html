@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello_react</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="test"></div>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <script type="text/babel">
+        class Life extends React.Component {
+            state = ({ opacity: 0.5 })
+
+            death = () => {
+                // console.log('#');
+                // clearInterval(this.timer)
+                ReactDOM.unmountComponentAtNode(document.getElementById('test'))
+            }
+            //组件挂载完毕
+            //定时器只开没关
+            //生命周期回调函数
+            //生命周期钩子函数,勾出来执行一下
+            //自己定义,react来调用
+            //render之后调用
+            componentDidMount() {
+                this.timer = setInterval(() => {
+                    let { opacity } = this.state
+                    opacity -= 0.1
+                    if (opacity <= 0) opacity = 1
+                    this.setState({ opacity })
+                }, 200);
+            }
+            componentWillUnmount() {
+                clearInterval(this.timer)
+
+            }
+            //react通过类的实例对象调用render和上面这个,所以可以写成正常函数的模样,不需要做成自自定义的回调函数
+            //render调用的时机:初始化渲染,状态更新后
+
+            render() {
+
+                return (
+                    <div>
+                        <h2 style={{ opacity: this.state.opacity }}>React学不会怎么办?</h2>
+                        <button onClick={this.death}>不活了</button>
+
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<Life />, document.getElementById('test'))
+    </script>
+</body>
+
+</html>
